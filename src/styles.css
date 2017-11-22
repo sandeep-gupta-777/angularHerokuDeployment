@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+/*Following will go to: C:\Users\sandgup3\Desktop\NodeBook\FreeFlatIcon\public\stylesheets\style.css*/
+body{
+
+
+  background-color: black;
+  /*background-color: white;*/
+  background: url('https://static.pexels.com/photos/159368/laptop-iphone-coffee-notebook-159368.jpeg') no-repeat;background-size: cover;
+  background-attachment: fixed;
+  /*this is to keep footer at at bottom*/
+  height: 100%;
+  margin: 0;
+}
+html{
+  /*this is to keep footer at at bottom*/
+
+  height: 100%;
+}
+* {
+  border-radius: 0 !important;
+}
+.language-javascript{
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.border1{
+  border: 2px solid red;
+}
+
+
+a{
+  cursor: pointer;
+}
+
+pre{
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.65);
+  color:white;
+}

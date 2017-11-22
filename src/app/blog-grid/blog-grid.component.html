@@ -1,0 +1,106 @@
+<div class="container" style="min-height: 70vh; overflow: hidden;width: 90%">
+  <br>
+  <!--<div class="container" >-->
+
+  <div class="row">
+    <div class="col-12 ">
+      <!--dropdown begins-->
+      <div class="dropdown pull-right " *ngIf="resultsArray && resultsArray.length>=1">
+        <button class="btn btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="true">
+          Sort By
+          <span class="caret"></span>
+        </button>
+        <!--TODO: use pipes instead of methods in sorting-->
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a (click)="sortbyPropery='-blogRelevency'">blogRelevency
+            <span *ngIf="sortbyPropery === '-blogRelevency'" class="glyphicon glyphicon-ok"></span>
+          </a></li>
+          <li><a (click)="sortbyPropery='-blogCreationDate'">Latest<span
+            *ngIf="sortbyPropery === '-blogCreationDate'" class="glyphicon glyphicon-ok"></span></a></li>
+          <li><a (click)="sortbyPropery='-blogLikes'">Likes<span
+            *ngIf="sortbyPropery === '-blogLikes'" class="glyphicon glyphicon-ok"></span></a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </div>
+      <!--dropdown ends here-->
+
+    </div>
+    <br>
+    <br>
+
+  </div>
+
+  <div class="row text-dark bg-white p-3 " *ngFor="let result of resultsArray" style="margin-bottom: 10px">
+    <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cards-->
+    <br>
+    <!--image starts here-->
+    <div class="col-md-2 col-12 p-0">
+
+      <img class="img-responsive " style="max-width: 100%"
+           [src]="result.blogImageURL? result.blogImageURL: 'https://ciphertrick.com/wp-content/uploads/2017/03/featured-1-900x420.jpg'"
+           alt="">
+    </div>
+    <!--image ends here-->
+
+    <div class="col-md-10 bg-white col-12 result-title-snippet-container">
+      <!--result title here-->
+      <div class="linkCursor truncate result-title display-4" style="font-weight: bold; width: 100%"
+           [innerHTML]="result.blogTitle" (click)="openBlogDisplayPage(result)"></div>
+      <div [innerHTML]="result.blogText | trimString:500"
+           style="font-family: 'Segoe UI',sans-serif,fantasy;font-size: 14px; overflow: hidden">
+        <!--in grid we use text but in full text we use htnml-->
+
+        <!--result snippet here-->
+      </div>
+    </div>
+    <!--Metadata starts-->
+    <div class="col-12" style=" margin-bottom: 10px ;overflow: hidden">
+      <div class="pull-right">
+        <span><b>{{result.blogAuthor_fullName|camelcase}}</b></span>
+        <span>{{result.blogCreationDate|date:'mediumDate'}}</span>
+        <!--TODO: DON'T DELETE: FOLLOWING IS COMMENTED BECAUSE OF LOCK OF BETTER DESIGN-->
+        <!--<a [routerLink]="'/'+global.blogEditURL + result._id" style="color:#000;"> <i-->
+        <!--*ngIf="isUserAlsoOwnerOfThisBlogPost(result.blogAuthor_id)" class="fa fa-edit">Edit</i></a>-->
+        <!--<span class="bg-dark p-1 text-white" ><i class="fa fa-heart-o p-1 bg-dark text-white" style="font-size: 20px"></i>{{result.blogLikes.length}}</span>-->
+        <!--<span class="bg-dark p-1 text-white" ><i class="fa fa-comment-o p-1 bg-dark text-white" style="font-size: 20px"></i>{{result.blogLikes.length}}</span>-->
+        <!---->
+
+      </div>
+      <!--Metadata ends-->
+
+
+    </div>
+  </div>
+<div *ngIf="showLoadingIcon">
+
+  <div class="row text-dark bg-white p-3 " *ngFor="let result of [1,2,3,4,5,6,7,8,9,10]" style="margin-bottom: 10px">
+    <!--https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_cards-->
+    <br>
+    <!--image starts here-->
+    <div class="col-md-2 col-12 p-0">
+      <div class="bg-dark" style="width: 100%;height: 70px"></div>
+    </div>
+    <!--image ends here-->
+
+    <div class="col-md-10 bg-white col-12 result-title-snippet-container">
+      <!--result title here-->
+      <div class="bg-dark-custom" style="width: 100%;height: 20px"></div>
+      <div class="bg-dark-custom mt-2" style="width: 100%;height: 10px"></div>
+      <div class="bg-dark-custom mt-2" style="width: 100%;height: 10px"></div>
+      <!--result title ends-->
+    </div>
+  </div>
+  <!--Metadata starts-->
+  <div class="col-12" style=" margin-bottom: 10px ;overflow: hidden">
+    <div class="pull-right">
+
+    </div>
+    <!--Metadata ends1-->
+</div>
+
+  </div>
+</div>
+
+

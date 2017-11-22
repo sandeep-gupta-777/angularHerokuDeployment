@@ -1,0 +1,19 @@
+
+.whiteText{
+  color: white;
+}
+
+
+.top-title{
+  font-size: 40px;
+}
+
+
+@media (max-width: 768px) {
+
+}
+
+
+#search1T:focus{
+  outline: none;
+}

@@ -1,1 +1,25 @@
-<router-outlet></router-outlet>
+
+<div class="container-fluid ">
+  <div class="row"  [ngClass]="{'blackBackground':showMenu && isSmallSizeDevice}">
+
+
+    <div class="col-12 col-md-2 nopadding " >
+      <div id="headerFixed"  >
+      </div>
+    </div>
+
+    <div class="col-12 col-md-8 nopadding ">
+      <router-outlet></router-outlet>
+      <!--<app-blog-grid></app-blog-grid>-->
+    </div>
+
+    <div class="col-12 col-md-2 nopadding hidden visible-lg" style="height: 100%; position: fixed; right: 0; top: 0px " >
+        <app-tabs ></app-tabs>
+    </div>
+
+
+
+  </div>
+
+</div>
+

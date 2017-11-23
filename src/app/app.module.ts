@@ -30,7 +30,7 @@ const appRoutes: Routes = [
     {loadChildren: './non-root/nonRootModule#NonRootModule', path: 'other'}
   ]},
   {component: FrontpageComponent, path: 'home'},
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', component:FrontpageComponent},
   {path: '**', component: NotFoundComponent}
 ];
 

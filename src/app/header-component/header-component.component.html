@@ -150,19 +150,19 @@
   <!--<br><br><br>-->
 <!--</div>-->
 <!--Search section-->
-<div class="mt-4 pt-5 " *ngIf="shouldShowSearchBar()" >
+<div class="mt-4 pt-5  d-flex flex-row justify-content"  *ngIf="shouldShowSearchBar()" >
 
-  <div class="container p-0 " style="width: 40%; position: relative">
+  <div class="container p-0">
     <!--<h1 class="display-4">Search</h1>-->
     <!--<p class="lead">Search notes, your own or others</p>-->
-    <div class="container" style="border-bottom: solid 3px white;width: 98%;height: 80px; position: absolute; top: 0px;left: 0;">
+    <div class="container align-self-center" id="border-botton-container" style="border-bottom: solid 3px white;height: 80px;top: 0px;left: 0;right: 0">
       <!--<div style="color:white;font-size: 60px; "><i class="fa fa-search-plus" style="margin-right: 1%"></i>Search Results</div>-->
-      <input id="searchhelp" autocomplete="off"  [(ngModel)]="searchHint"
-              type="search"  class="py-2"
-             style="width: 100%;position: absolute;;">
+      <!--<input id="searchhelp" autocomplete="off"  [(ngModel)]="searchHint"-->
+              <!--type="search"  class="py-2"-->
+             <!--style="position: absolute;;">-->
       <input id="searchT" autocomplete="off"  [(ngModel)]="searchQuery" (ngModelChange)="triggerAllResultsObservable($event,200)" (keydown)="rightArrowKeyPressed($event)"
              placeholder="Search..." autofocus type="search"
-             style="width: 100%; ;color: white;position: absolute ;z-index:10" class="py-2">
+             style=" width: 100%;color: white;z-index:10" class="py-2; ">
     </div>
 
   </div>

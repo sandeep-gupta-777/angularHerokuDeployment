@@ -82,19 +82,34 @@ a{
 #searchhelp,#searchT:focus{
   outline: none;
 }
+
+#searchhelp{
+  color: #808080;
+  border: hidden;
+  background: transparent;
+  height: 80px;
+  font-size: 60px;
+}
 #searchT{
   height: 80px;
   font-size: 60px;
   color: white;
-border: hidden;
-background: transparent;
-}
-
-#searchhelp{
-  height: 80px;
-  font-size: 60px;
-  color: #808080;
   border: hidden;
   background: transparent;
+
 }
 
+/*phone*/
+@media (max-width: 768px) {
+  #searchT,#searchhelp  #searchContainer{
+    width: 100%;
+  }
+  #searchContainer{
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+ #searchT,#searchhelp,#border-botton-container,  #searchContainer{
+    width: 50%;
+  }
+}

@@ -53,7 +53,6 @@ export class BlogPageComponent implements OnInit, AfterViewInit, OnDestroy, OnCh
         this.blogInstance = value[0];
 
         console.log("fetching blog from server");
-        console.log(this.blogInstance);
         this.editor.setContent(this.blogInstance.blogDraftHTML);
         this.blogTitle = this.blogInstance.blogTitle;
         this.blogContent = this.blogInstance.blogDraftHTML;
@@ -69,7 +68,6 @@ export class BlogPageComponent implements OnInit, AfterViewInit, OnDestroy, OnCh
 
   ngOnChanges() {
     if (this.blogInstance)
-      console.log(this.blogInstance.blogDraftHTML);
     //TODO: change this to ngModelChange
     if (this.editor)
       this.editor.setContent(this.blogInstance.blogDraftHTML);
@@ -94,7 +92,6 @@ export class BlogPageComponent implements OnInit, AfterViewInit, OnDestroy, OnCh
         let _id = value._id;
         if (!this.blogInstance._id)
           this.router.navigate(['/blogEdit/' + _id]);
-        console.log(value);
         this.showMessageFromServer = true;
         if (shouldUpdateBlogHTMLAsWell === false) {
           this.messageFromServer = "Draft Autosaved!";
@@ -175,7 +172,6 @@ export class BlogPageComponent implements OnInit, AfterViewInit, OnDestroy, OnCh
       setup: editor => {
         this.editor = editor;
         editor.on('change paste keyup', () => {
-          console.log(editor.getContent({format: 'text'}));
           const content = editor.getContent();
           this.blogContent = content;
           this.ref.detectChanges();

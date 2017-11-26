@@ -1,3 +1,6 @@
+
+<div style="background-color: rgba(0,0,0,0.5);">
+
 <div *ngIf="showProgressBar" style="position: fixed;top: 0; z-index: 2000;width: 100%">
   <app-progress-bar></app-progress-bar>
 </div>
@@ -5,11 +8,11 @@
 
 
 
-<div  style="background-color: rgba(0,0,0,0.58);">
+<div  >
   <app-header-component></app-header-component>
 </div>
 
-<div class="container-fluid " style="background-color: rgba(0,0,0,0.58);min-height: 800px">
+<div class="container-fluid " style="min-height: 800px">
   <div class="row"  [ngClass]="{'blackBackground':showMenu && isSmallSizeDevice}">
 
     <div class="col-12 p-0" >
@@ -28,3 +31,4 @@
 
 </div>
 
+</div>

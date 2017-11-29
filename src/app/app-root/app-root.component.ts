@@ -2,6 +2,7 @@ import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {Helper} from "../helper.service";
 import {EventService} from "../event.service";
 import {Global} from "../Global.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -16,9 +17,10 @@ export class AppRootComponent implements OnInit {
   html:string;
   showProgressBar:boolean=true;
 
-  constructor(private helper:Helper, private eventService:EventService,private global:Global,private ref : ChangeDetectorRef){ }
+  constructor(private helper:Helper, private eventService:EventService,private global:Global,private ref : ChangeDetectorRef, public activatedRoute:ActivatedRoute){ }
 
   ngOnInit(){
+    console.log(this.activatedRoute);
     this.showProgressBar= false;
 
     this.helper.showProgressBarEvent.subscribe(value=>{

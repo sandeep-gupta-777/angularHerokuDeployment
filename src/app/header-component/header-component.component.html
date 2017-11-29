@@ -117,7 +117,7 @@
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a routerLink="/home" class="navbar-brand" style="font-weight: bold; font-size: 30px;color: white">CodeConvict</a>
+    <a  (click)='homeClicked()' class="navbar-brand" style="font-weight: bold; font-size: 30px;color: white">CodeConvict</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -128,13 +128,13 @@
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav ml-auto">
         <li class="navbar-items">
-          <a routerLink="/home" class="nav-link"><i class="fa fa-home"></i> Home</a>
+          <a (click)='homeClicked()' class="nav-link"><i class="fa fa-home"></i> Home</a>
         </li>
         <li class="navbar-items">
           <a class="nav-link" (click)="searchIconClicked()"><i class="fa fa-search"></i> Search</a>
         </li>
         <li class="navbar-items">
-          <a [routerLink]="global.createNewBlogUrl" class="nav-link">Write</a>
+          <a  (click)="writeClicked()" class="nav-link">Write</a>
         </li>
         <li  class="navbar-items">
             <a *ngIf="!isLoggedIn()" class="nav-link" (click)="goToLoginPage()">Login</a>

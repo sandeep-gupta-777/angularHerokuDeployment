@@ -14,6 +14,16 @@ import {factoryOrValue} from "rxjs/operator/multicast";
 })
 export class HeaderComponentComponent implements OnInit {
 
+  homeClicked(){
+    console.log('home clicked');
+    this.router.navigate(["/"]);
+    document.getElementById("menu").classList.remove("show");
+  }
+  writeClicked(){
+    console.log('home clicked');
+    this.router.navigate([this.global.createNewBlogUrl]);
+    document.getElementById("menu").classList.remove("show");
+  }
   rightArrowKeyPressed(e){
     console.log(e);
     if(e.keyCode===39 && this.checkKeywordPartialMatch(this.searchHint, this.searchQuery)){
@@ -22,7 +32,7 @@ export class HeaderComponentComponent implements OnInit {
     }
   }
   searchIconClicked(){
-
+    document.getElementById("menu").classList.remove("show");
     this.global.showSearchBarBoolean=!this.global.showSearchBarBoolean;
     setTimeout(()=>{document.getElementById("searchT") && document.getElementById("searchT").focus();},0)
   }
@@ -176,7 +186,7 @@ export class HeaderComponentComponent implements OnInit {
   }
 
   goToLoginPage(){
-
+    document.getElementById("menu").classList.remove("show");
     this.global.previousSRPURL = window.location.pathname;
     this.global.previousSRPQueryParams = this.activatedRoute.snapshot.queryParams;
     console.log('saved previous url');
@@ -184,6 +194,7 @@ export class HeaderComponentComponent implements OnInit {
 
   }
   logout(){
+    document.getElementById("menu").classList.remove("show");
     localStorage.clear();
     this.global.previousSRPURL = window.location.pathname;
     this.global.previousSRPQueryParams = this.activatedRoute.snapshot.queryParams;

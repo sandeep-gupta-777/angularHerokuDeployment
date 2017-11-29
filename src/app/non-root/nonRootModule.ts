@@ -36,7 +36,7 @@ const appRoutes: Routes = [
   {component: BlogDisplayComponent, path: 'blogdisplay/:id'},
   {component: TextEditorInterfaceComponent, path: 'new/blog'},
   {component: TextEditorInterfaceComponent, path: 'blogEdit'},
-  {component: TextEditorInterfaceComponent, path: 'blogEdit/:id'},
+  {component: TextEditorInterfaceComponent, path: 'blogEdit/:id', canActivate:[AuthService]},
 ];
 
 

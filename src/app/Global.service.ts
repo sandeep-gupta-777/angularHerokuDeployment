@@ -17,8 +17,8 @@ export class Global{
 
   blogDisplayURL = 'app/other/blogdisplay/';
   createNewBlogUrl= 'app/other/new/blog';
-  loginURL = 'app/other/login/';
-  signUpURL = 'app/other/signup/';
+  loginURL = 'login/';
+  signUpURL = 'signup/';
   blogEditURL = 'app/other/blogEdit/';
   likedBlogsURL = 'app/other/dashboard/likedBlogs/';
   writtenBlogsURL = 'app/other/dashboard/writtenBlogs/';
@@ -33,8 +33,8 @@ export class Global{
 
   private _loggedInUserDetails:SiteUser;
   private _seachQuery:string;
-  private _backendURL_heroku = 'https://shielded-harbor-17443.herokuapp.com';
-  // private _backendURL_heroku = 'http://localhost:3000';
+  // private _backendURL_heroku = 'https://shielded-harbor-17443.herokuapp.com';
+  private _backendURL_heroku = 'http://localhost:3000';
   //backend routes
 
   public resultsArray: [BlogPost];

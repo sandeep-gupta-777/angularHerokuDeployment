@@ -25,7 +25,7 @@
 
       <div style="width: 100%">
         <div class="container " style="padding-top: 100px">
-          <div class="row ">
+          <div class="row d-flex justify-content-center">
             <div class="col-sm-12 col-lg-8 d-none d-lg-block ">
               <h1 class="display-4">All your ideas <strong>in one place, </strong> on all device. Online or <strong>offline</strong>.
               </h1>
@@ -64,26 +64,41 @@
 
 
             </div>
-            <div class="col-lg-4 ">
-              <div class="card bg-transparent border-light card-form text-center">
-                <div class="card-body">
-                  <h3>Sign up</h3>
-                  <p>Register to get started. Its free!</p>
-                  <form>
-                    <div class="form-group"><input type="text" placeholder="Name" class="form-control-lg form-control">
-                    </div>
-                    <div class="form-group"><input type="email" placeholder="Email"
-                                                   class="form-control-lg form-control"></div>
-                    <div class="form-group"><input type="password" placeholder="password"
-                                                   class="form-control-lg form-control"></div>
-                    <div class="form-group"><input type="password" placeholder="confirm password"
-                                                   class="form-control-lg form-control"></div>
-                    <a href="#" class="btn btn-outline-light btn-block ">Submit</a>
 
-                  </form>
+            <div class="col-lg-4  ">
+
+              <div *ngIf="!isLoggedIn(); else f"><app-signup></app-signup></div>
+
+              <ng-template #f>
+              <div class="card bg-transparent border-light card-form text-center" >
+                <div class="card-body">
+                  <img class="card-img-top img-thumbnail" src="https://images.pexels.com/photos/261577/pexels-photo-261577.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" alt="Card image cap">
+                  <div class="card-block">
+                    <button class="btn btn-outline-light btn-block text-white my-3" ><a [routerLink]="'/'+global.createNewBlogUrl" style="color: white">Write</a></button>
+                    <p class="card-text">No matter what people tell you, words and ideas can change the world.</p>
+                  </div>
+
+                  <!--<h3>Sign up</h3>-->
+                  <!--<p>Register to get started. Its free!</p>-->
+                  <!--<form >-->
+                    <!--<div class="form-group"><input type="text" placeholder="Name" class="form-control-lg form-control">-->
+                    <!--</div>-->
+                    <!--<div class="form-group"><input type="email" placeholder="Email"-->
+                                                   <!--class="form-control-lg form-control"></div>-->
+                    <!--<div class="form-group"><input type="password" placeholder="password"-->
+                                                   <!--class="form-control-lg form-control"></div>-->
+                    <!--<div class="form-group"><input type="password" placeholder="confirm password"-->
+                                                   <!--class="form-control-lg form-control"></div>-->
+                    <!--<a href="#" class="btn btn-outline-light btn-block ">Submit</a>-->
+
+                  <!--</form>-->
                 </div>
               </div>
+              </ng-template>
             </div>
+
+
+
           </div>
         </div>
       </div>

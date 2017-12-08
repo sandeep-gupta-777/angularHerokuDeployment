@@ -23,6 +23,10 @@ export class FrontpageComponent implements OnInit {
   //     this.router.navigate([this.global.blogGridUrl], {queryParams:{query:this.searchQuery}});
   // }
 
+  isLoggedIn(){
+    return localStorage.getItem('token')!== null;
+  }
+
 
   triggerAllResultsObservable(searchQuery?:string){
     // if(togggleMenu)this.showMenuOnXS = !this.showMenuOnXS;

@@ -20,6 +20,23 @@
 }
 
 input.ng-invalid.ng-touched {
-  border: 2px solid red;
+  border: 1px solid rgba(0, 0, 0, 0.61);
   /*background-color: red;*/
+}
+
+
+@media (max-width: 768px) {
+  #loginContainer{
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  #loginContainer{
+    width: 100%;
+  }
+  #loginContainer.isItSignUpPage{
+    width: 40%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
 }

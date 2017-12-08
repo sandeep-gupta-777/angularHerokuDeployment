@@ -1,82 +1,158 @@
 
 
-<br><br>
-<br><br>
-<br><br>
+<!--<br><br>-->
+<!--<br><br>-->
+<!--<br><br>-->
 
-<div class="container"  style="width: 60%">
-  <!--social buttons start-->
+<!--<div class="container"  style="width: 60%">-->
+  <!--&lt;!&ndash;social buttons start&ndash;&gt;-->
+  <!--<div class="row ">-->
+    <!--<div class="col-4 horizontal-center">-->
+      <!--<button class="btn btn-lg btn-primary btn-block" type="submit"><i class="fa fa-facebook"></i></button>-->
+    <!--</div>-->
+    <!--<div class="col-4 horizontal-center">-->
+      <!--<button class="btn btn-lg btn-danger btn-block" type="submit"><i class="fa fa-google-plus"></i></button>-->
+    <!--</div>-->
+    <!--<div class="col-4 horizontal-center">-->
+      <!--<button class="btn btn-lg btn-default btn-block" type="submit"><i class="fa fa-twitter"></i></button>-->
+    <!--</div>-->
+
+  <!--</div>-->
+  <!--&lt;!&ndash;social buttons end&ndash;&gt;-->
+
+  <!--&lt;!&ndash;horizontal bar start&ndash;&gt;-->
+  <!--<div class="row vertical-center">-->
+    <!--<div class="col-5">-->
+      <!--<hr>-->
+    <!--</div>-->
+    <!--<div class="col-2" style="color: white"> Or</div>-->
+    <!--<div class="col-5">-->
+      <!--<hr>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--&lt;!&ndash;horizontal bar end&ndash;&gt;-->
+
+
+  <!--&lt;!&ndash;login form bar start&ndash;&gt;-->
+
+  <!--<form (ngSubmit)="onSubmit()" #f="ngForm">-->
+    <!--<div class="row ">-->
+
+      <!--&lt;!&ndash;input for full name&ndash;&gt;-->
+      <!--<div class="input-group">-->
+        <!--<span class="input-group-addon"><i class="fa fa-smile-o"></i></span>-->
+        <!--<input type="text" class="form-control" ngModel name="full_name" required placeholder="Full Name" >-->
+      <!--</div>-->
+
+      <!--&lt;!&ndash;input for username&ndash;&gt;-->
+      <!--<div class="input-group">-->
+        <!--<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+        <!--<input type="text" class="form-control" ngModel name="username" required placeholder="Username" >-->
+      <!--</div>-->
+
+      <!--&lt;!&ndash;input for Email&ndash;&gt;-->
+      <!--<div class="input-group">-->
+        <!--<span class="input-group-addon"><i class="fa fa-envelope"></i></span>-->
+        <!--<input type="text" class="form-control" ngModel name="email" required placeholder="Email" email>-->
+      <!--</div>-->
+
+      <!--&lt;!&ndash;input for password&ndash;&gt;-->
+      <!--<div class="input-group">-->
+        <!--<span class="input-group-addon"><i class="fa fa-key"></i></span>-->
+        <!--<input type="password" [minlength]="6" class="form-control" ngModel name="password" required placeholder="Password" password>-->
+      <!--</div>-->
+      <!--<div *ngIf="showErrorMessage" style="color: white">{{helper_message}}</div>-->
+
+      <!--&lt;!&ndash;input for confirm password&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="input-group">&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="input-group-addon"><i class="fa fa-key"></i></span>&ndash;&gt;-->
+        <!--&lt;!&ndash;<input type="password" id="password" class="form-control" ngModel name="password" required placeholder="Confirm Password" password>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+      <!--<br>-->
+      <!--<button class="btn btn-lg btn-primary btn-block" [disabled]="!f.valid" type="submit"><i class="fa fa-sign-in"></i> Register</button>-->
+    <!--</div>-->
+  <!--</form>-->
+  <!--&lt;!&ndash;login form bar end&ndash;&gt;-->
+  <!--<br>-->
+  <!--<div class="row whiteText" >-->
+    <!--<div><b>Already have an account? Click <a routerLink="/login">here to Login</a></b></div>-->
+  <!--</div>-->
+
+<!--</div>-->
+
+
+
+<!--<br><br>-->
+<!--<br><br>-->
+
+<div id="loginContainer" [ngClass]="{isItSignUpPage:isItSignUpPage}" class="container py-4 px-5 border-white"  style="border:  1px solid rgba(0,0,0,0.61)" >
+
+  <p class="text-center text-white text lead" style="font-size: 35px; font-weight: bold">Sign Up</p>
+  <!--social buttons start1-->
   <div class="row ">
     <div class="col-4 horizontal-center">
-      <button class="btn btn-lg btn-primary btn-block" type="submit"><i class="fa fa-facebook"></i></button>
+      <button href="/auth/facebook" (click)="makeGetRequestForFaceBook()" class=  "btn btn-outline-light btn-block" role="button" type="submit"><i class="fa fa-facebook"></i></button>
     </div>
     <div class="col-4 horizontal-center">
-      <button class="btn btn-lg btn-danger btn-block" type="submit"><i class="fa fa-google-plus"></i></button>
+      <button href="/auth/facebook" (click)="makeGetRequestForFaceBook()" class="btn  btn-outline-light btn-block" role="button" type="submit"><i class="fa fa-google"></i></button>
     </div>
     <div class="col-4 horizontal-center">
-      <button class="btn btn-lg btn-default btn-block" type="submit"><i class="fa fa-twitter"></i></button>
+      <button href="/auth/facebook" (click)="makeGetRequestForFaceBook()" class="btn  btn-outline-light btn-block" role="button" type="submit"><i class="fa fa-twitter"></i></button>
     </div>
+
 
   </div>
   <!--social buttons end-->
 
   <!--horizontal bar start-->
-  <div class="row vertical-center">
-    <div class="col-5">
-      <hr>
+  <div class="row vertical-center text-white text-center">
+    <div class="col-5 ">
+      <hr class="border">
     </div>
-    <div class="col-2" style="color: white"> Or</div>
+    <div class="col-2 "> Or</div>
     <div class="col-5">
-      <hr>
+      <hr class="border">
     </div>
   </div>
-  <!--horizontal bar end-->
+  <!--horizontal bar end1-->
 
 
-  <!--login form bar start-->
+  <!--Sign up form bar start-->
 
   <form (ngSubmit)="onSubmit()" #f="ngForm">
     <div class="row ">
 
-      <!--input for full name-->
-      <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-smile-o"></i></span>
-        <input type="text" class="form-control" ngModel name="full_name" required placeholder="Full Name" >
+      <div class="input-group" *ngIf="isItSignUpPage">
+        <span class="input-group-addon"><i class="fa  fa-user"></i></span>
+        <!--<input type="text" class="form-control" name="username" placeholder="Email or Username">-->
+        <input type="text" id="username" class="form-control form-control-lg" ngModel name="full_name" required placeholder="Full name">
       </div>
 
-      <!--input for username-->
       <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input type="text" class="form-control" ngModel name="username" required placeholder="Username" >
+        <span class="input-group-addon"><i class="fa  fa-user"></i></span>
+        <!--<input type="text" class="form-control" name="username" placeholder="Email or Username">-->
+        <input type="text" id="username" class="form-control form-control-lg" ngModel name="email" required placeholder="Email or Username">
       </div>
 
-      <!--input for Email-->
-      <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-        <input type="text" class="form-control" ngModel name="email" required placeholder="Email" email>
-      </div>
 
-      <!--input for password-->
       <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-key"></i></span>
-        <input type="password" [minlength]="6" class="form-control" ngModel name="password" required placeholder="Password" password>
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <!--<input type="text" class="form-control" name="username" placeholder="Password">-->
+        <input type="password" id="password" class="form-control form-control-lg" ngModel name="password" required placeholder="Password">
+
       </div>
       <div *ngIf="showErrorMessage" style="color: white">{{helper_message}}</div>
 
-      <!--input for confirm password-->
-      <!--<div class="input-group">-->
-        <!--<span class="input-group-addon"><i class="fa fa-key"></i></span>-->
-        <!--<input type="password" id="password" class="form-control" ngModel name="password" required placeholder="Confirm Password" password>-->
-      <!--</div>-->
-
-      <br>
-      <button class="btn btn-lg btn-primary btn-block" [disabled]="!f.valid" type="submit"><i class="fa fa-sign-in"></i> Register</button>
+      <button class="btn  btn-outline-light btn-block my-4" type="submit"><i class="fa fa-sign-in"></i> Sign up</button>
     </div>
   </form>
-  <!--login form bar end-->
-  <br>
+  <!--Sign up form bar end1-->
+  <!--<br>-->
   <div class="row whiteText" >
-    <div><b>Already have an account? Click <a routerLink="/login">here to Login</a></b></div>
+    <div><b>Don't have an account? Click <a [routerLink]="'/'+global.loginURL" style="color:white;">here to Register</a></b></div>
   </div>
 
 </div>
+
+<!--<br><br><br><br>-->

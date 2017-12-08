@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Data, Router} from "@angular/router";
 
 import {Helper} from "../../helper.service";
 import {Global} from "../../Global.service";
@@ -16,15 +16,23 @@ export class SignupComponent implements OnInit {
   @ViewChild('f') form;
   showErrorMessage = false;
   helper_message = "";
+  isItSignUpPage:boolean = false;
   onSubmit() {
 
     //Sign up user
     console.log(this.form);
+    if(!this.form.valid){
+      this.showErrorMessage=true;
+      this.helper_message = "Please fill the form correctly";
+      return;
+    }
     // let user:SiteUser = new SiteUser("","tempUsername",this.form.value.username, this.form.value.email,this.form.value.password);
     let user:SiteUser = {userName:this.form.value.username, fullName:this.form.value.full_name, password:this.form.value.password, email:this.form.value.email};
 
+
     this.helper.signup(user) .subscribe((value:any) => {
 
+      console.log(value);
       if(value.problem_message){
         console.log(value.problem_message);
         this.helper_message = value.problem_message;
@@ -33,8 +41,9 @@ export class SignupComponent implements OnInit {
         return;
       }
 
+
       if(value.message==='user created'){
-        this.helper_message = 'Sign Up dont. Loggin in';
+        this.helper_message = 'Sign Up done.Logging in!';
       }
       //after sign up is done, log user in
       const user:SiteUser = {userName: this.form.value.username, email:this.form.value.email,password:this.form.value.password};
@@ -62,9 +71,13 @@ export class SignupComponent implements OnInit {
 
 
 }
-  constructor(private helper:Helper, private router:Router, private global:Global) { }
+  constructor(private helper:Helper, private router:Router, private global:Global, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
+      this.activatedRoute.data.subscribe((data:Data)=>{
+        console.log(data);
+        this.isItSignUpPage = data.isItSignUpPage;;
+      });
       this.global.showSearchBarBoolean=false;
   }
 

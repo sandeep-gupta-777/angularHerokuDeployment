@@ -20,6 +20,8 @@ import { TabsComponent } from './tabs/tabs.component';
 import { Footer2Component } from './footer2/footer2.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { AppRootComponent } from './app-root/app-root.component';
+import {SignupComponent} from "./non-root/signup/signup.component";
+import {LoginComponent} from "./non-root/login/login.component";
 
 // routes
 const appRoutes: Routes = [
@@ -30,6 +32,10 @@ const appRoutes: Routes = [
     {loadChildren: './non-root/nonRootModule#NonRootModule', path: 'other'}
   ]},
   {component: FrontpageComponent, path: 'home'},
+  {component: SignupComponent, path: 'signup',data:{isItSignUpPage:true}},
+  {component: SignupComponent, path: 'signup/:nextURL'},
+  {component: LoginComponent, path: 'login'},
+  {component: LoginComponent, path: 'login/:nextURL'},
   {path: '', component:FrontpageComponent},
   {path: '**', component: NotFoundComponent}
 ];
@@ -40,7 +46,9 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponentComponent,
     FooterComponentComponent,
+    LoginComponent,
     // BlogGridComponent,
+    SignupComponent,
     NotFoundComponent,
     ProgressBarComponent,
     TabsComponent,

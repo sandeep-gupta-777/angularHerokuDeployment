@@ -26,7 +26,10 @@
   }
 }
 @media (min-width: 768px) {
+
   #loginContainer{
-    width: 50%;
+    width: 40%;
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
 }

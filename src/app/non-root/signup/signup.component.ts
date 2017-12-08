@@ -72,7 +72,7 @@ export class SignupComponent implements OnInit {
 
 
 }
-  constructor(private helper:Helper, private router:Router, private global:Global, private activatedRoute:ActivatedRoute) { }
+  constructor(private helper:Helper, private router:Router, public global:Global, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
       this.activatedRoute.data.subscribe((data:Data)=>{

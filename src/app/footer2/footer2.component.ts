@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Global} from "../Global.service";
 
 @Component({
   selector: 'app-footer2',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Footer2Component implements OnInit {
 
-  constructor() { }
+  constructor(public global:Global) { }
 
   ngOnInit() {
   }

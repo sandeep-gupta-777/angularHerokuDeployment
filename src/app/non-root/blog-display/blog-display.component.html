@@ -2,8 +2,10 @@
 <div class="container" style="width: 95%">
   <div class="row ">
     <!--<div class="col-12 border">-->
-      <a role="button" *ngIf="global.resultsArray" class="btn btn-outline-light text-white" (click)="goToPreviousSRP()"><i
+      <button *ngIf="global.resultsArray"  class="btn btn-outline-light" >
+        <a role="button"  (click)="goToPreviousSRP()"><i
         class="fa fa-arrow-left"></i> Back to Results</a>
+      </button>
       <button *ngIf="isUserAlsoOwnerOfThisBlogPost()" class="btn btn-outline-light"
               (click)="openBlogEditorPage()"><a routerLink="/blogEdit"></a>{{editMode?"Save":"Edit"}}
       </button>
@@ -59,7 +61,7 @@
     <div class="vertical-center col-md-1 col-12 bg-light   linkCursor"
          style="background-color: black;color: red; height: 30px">
       <i class="fa fa-heart pull-right p-1 " style="font-size: 20px" (click)="toggleLike()"></i>
-      <span bg> {{blogPost && blogPost.blogLikes.length}}</span>
+      <span bg> {{blogPost && blogPost.blogLikes && blogPost.blogLikes.length}}</span>
     </div>
     <!--Like button ends -->
   </div>

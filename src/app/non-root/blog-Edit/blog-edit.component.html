@@ -11,10 +11,10 @@
 <div class="container text-white">
   <div class="row">
     <div class="col-12 ">
-      <button class="btn btn-outline-light pull-right" style="color: white">Add images</button>
+      <button class="btn btn-outline-light pull-right" ><a ><b>Add images</b></a></button>
       <a *ngIf="_id" class="btn btn-outline-light pull-right" role="button" (click)="showPreviewClicked()" >Preview</a>
-      <button class="btn btn-outline-light pull-right" (click)="updateBlogOnServer(true)" style="color: white">
-        {{messageFromServer?messageFromServer:'Update'}}
+      <button class="btn btn-outline-light pull-right" (click)="updateBlogOnServer(true)">
+        <a><b>{{messageFromServer?messageFromServer:'Update'}}</b></a>
       </button>
       <!--<p *ngIf = "showMessageFromServer">{{messageFromServer}}</p>-->
     </div>

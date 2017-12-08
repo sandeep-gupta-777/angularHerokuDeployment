@@ -7,6 +7,7 @@ import { Response } from '@angular/http';
 import {Helper} from "../../helper.service";
 import {Global} from "../../Global.service";
 import {SiteUser} from "../../models";
+import {showWarningOnce} from "tslint/lib/error";
 
 
 @Component({
@@ -22,9 +23,23 @@ export class LoginComponent implements OnInit {
   constructor(private helper:Helper,public global:Global, private router:Router,private activatedRoute:ActivatedRoute) {
   }
   @ViewChild('f') form;
+
+  showErrorMessageForThreeSec(){
+    this.showErrorMessage = true;
+    setTimeout(()=>{this.showErrorMessage=false},3000);
+  }
   onSubmit() {
+
+    if(!this.form.valid){
+
+      this.helper_message="Please fill all inputs correctly";
+      this.showErrorMessageForThreeSec();;
+      return;
+    }
+
+
       console.log(this.form);
-    const user = {email:this.form.value.username,password:this.form.value.password};
+    const user = {email:this.form.value.email,password:this.form.value.password};
     this.helper.login(user).subscribe(
 
         (data:{massage:string,token:string,user:SiteUser}) =>{

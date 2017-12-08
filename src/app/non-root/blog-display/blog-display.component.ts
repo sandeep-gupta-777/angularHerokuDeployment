@@ -137,12 +137,7 @@ export class BlogDisplayComponent implements OnInit {
 
      this._id = this.route.snapshot.params['id'];
 
-    // this.getImageContainersSubscription = this.shared.getImageContainers.subscribe(
-    //   (value)=>{
-    //     console.log("in ng on init of sidebar1.component.ts");
-    //     this.imageContainer = value
-    //   }
-    // );
+
     this.getClickedBlogPostSubscription = this.shared.getClickedBlogPost.subscribe(
       (value) => {
         console.log(value);
@@ -154,7 +149,8 @@ export class BlogDisplayComponent implements OnInit {
     //this code is to fetch the blog from server when page is reloaded
     this.helper.makePostRequest('getBlogPost', {_id: this._id}).subscribe((value) => {
       this.blogPost = value[0];
-
+      console.log(value[0]);
+      if(this.blogPost.blogTitle!=='Unauthorized access')
       this.pushBlogInLocalStorageObj();
 
       // alert(this.blogPost.blogTitle);

@@ -56,6 +56,7 @@ export class SignupComponent implements OnInit {
           // this.router.navigateByUrl('/');
           this.router.navigate([this.global.previousSRPURL],{queryParams:this.global.previousSRPQueryParams});
           this.global.setLoggedInUserDetails(user);
+          this.helper.showNotificationBarEvent.emit({message:'Signup done. You are logged in'});
         },
         error => {console.log(error)}
       );

@@ -17,6 +17,7 @@ export class SignupComponent implements OnInit {
   showErrorMessage = false;
   helper_message = "";
   isItSignUpPage:boolean = false;
+  makeGetRequestForFaceBook(){}
   onSubmit() {
 
     //Sign up user

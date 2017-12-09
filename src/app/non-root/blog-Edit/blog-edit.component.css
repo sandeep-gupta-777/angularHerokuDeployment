@@ -15,5 +15,6 @@
 
 
 #search1T:focus{
-  outline: none;
+  outline: none !important;
+  box-shadow: none !important;
 }

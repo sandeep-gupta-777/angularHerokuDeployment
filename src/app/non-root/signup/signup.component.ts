@@ -17,7 +17,10 @@ export class SignupComponent implements OnInit {
   showErrorMessage = false;
   helper_message = "";
   isItSignUpPage:boolean = false;
-  makeGetRequestForFaceBook(){}
+  makeGetRequestForFaceBook(  ){
+    console.log('asking for facebook');
+    this.helper.makeGetRequest('auth/facebook').subscribe((value)=>{console.log(value)});
+  }
   onSubmit() {
 
     //Sign up user

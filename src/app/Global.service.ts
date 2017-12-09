@@ -14,6 +14,9 @@ export class Global{
       });
 
   }
+  isLoggedIn(){
+    return localStorage.getItem('token')!== null;
+  }
 
   blogDisplayURL = 'app/other/blogdisplay/';
   createNewBlogUrl= 'app/other/new/blog';

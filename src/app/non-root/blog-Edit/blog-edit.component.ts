@@ -76,8 +76,14 @@ export class BlogPageComponent implements OnInit, AfterViewInit, OnDestroy, OnCh
 
   updateBlogOnServer(shouldUpdateBlogHTMLAsWell: Boolean) {
 
+
     if (this.blogTitle === "") {
       alert('Title can not be empty');
+      return;
+    }
+
+    if(!this.global.isLoggedIn()){
+      alert('Please log in first!');
       return;
     }
 
@@ -91,7 +97,7 @@ export class BlogPageComponent implements OnInit, AfterViewInit, OnDestroy, OnCh
         //reload the page and have new ID in URL
         let _id = value._id;
         if (!this.blogInstance._id)
-          this.router.navigate(['/blogEdit/' + _id]);
+          this.router.navigate([this.global.blogDisplayURL + _id]);
         this.showMessageFromServer = true;
         if (shouldUpdateBlogHTMLAsWell === false) {
           this.messageFromServer = "Draft Autosaved!";

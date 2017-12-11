@@ -17,8 +17,8 @@
     <div class="col-md-11 col-12 pull-right whiteBackgroud" style="font-weight: bold; padding-top: 1.9%;">
       <span><b>{{comment.commentAuthor_FullName}}</b></span>
       <span>{{comment.commentDate|date:'medium'}}</span>
-      <button class="btn btn-primary btn-sm pull-right" (click)="showReplyBox = !showReplyBox">Reply</button>
-      <button class="btn btn-danger btn-sm  pull-right" (click)="saveComment()">{{showEditBox?'Save':'Edit'}}</button>
+      <button class="btn btn-outline-light btn-sm pull-right" (click)="showReplyBox = !showReplyBox">Reply</button>
+      <button class="btn btn-outline-light btn-sm  pull-right" (click)="saveComment()">{{showEditBox?'Save':'Edit'}}</button>
     </div>
     <!--<div id="triangle-left" style="position: absolute;left: 6.7%;top: 9%"></div>-->
     <!--TODO: apply above triangle-->

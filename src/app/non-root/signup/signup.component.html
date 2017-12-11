@@ -90,42 +90,42 @@
 
   <p class="text-center text-white text lead" style="font-size: 35px; font-weight: bold">Sign Up</p>
   <!--social buttons start1-->
-  <div class="row ">
-    <div class="col-4 horizontal-center">
-      <button  (click)="makeGetRequestForFaceBook()" class=  "btn btn-outline-light btn-block" role="button" type="submit">
-        <a ><i class="fa fa-facebook"></i></a>
-      </button>
-    </div>
-    <div class="col-4 horizontal-center">
-      <button href="/auth/facebook" (click)="makeGetRequestForFaceBook()" class="btn  btn-outline-light btn-block" role="button" type="submit"><i class="fa fa-google"></i></button>
-    </div>
-    <div class="col-4 horizontal-center">
-      <button href="/auth/facebook" (click)="makeGetRequestForFaceBook()" class="btn  btn-outline-light btn-block" role="button" type="submit"><i class="fa fa-twitter"></i></button>
-    </div>
+  <!--<div class="row ">-->
+    <!--<div class="col-4 horizontal-center">-->
+      <!--<button  (click)="makeGetRequestForFaceBook()" class=  "btn btn-outline-light btn-block" role="button" type="submit">-->
+        <!--<a ><i class="fa fa-facebook"></i></a>-->
+      <!--</button>-->
+    <!--</div>-->
+    <!--<div class="col-4 horizontal-center">-->
+      <!--<button href="/auth/facebook" (click)="makeGetRequestForFaceBook()" class="btn  btn-outline-light btn-block" role="button" type="submit"><i class="fa fa-google"></i></button>-->
+    <!--</div>-->
+    <!--<div class="col-4 horizontal-center">-->
+      <!--<button href="/auth/facebook" (click)="makeGetRequestForFaceBook()" class="btn  btn-outline-light btn-block" role="button" type="submit"><i class="fa fa-twitter"></i></button>-->
+    <!--</div>-->
 
 
-  </div>
-  <!--social buttons end-->
+  <!--</div>-->
+  <!--&lt;!&ndash;social buttons end&ndash;&gt;-->
 
-  <!--horizontal bar start-->
-  <div class="row vertical-center text-white text-center">
-    <div class="col-5 ">
-      <hr class="border">
-    </div>
-    <div class="col-2 "> Or</div>
-    <div class="col-5">
-      <hr class="border">
-    </div>
-  </div>
-  <!--horizontal bar end1-->
+  <!--&lt;!&ndash;horizontal bar start&ndash;&gt;-->
+  <!--<div class="row vertical-center text-white text-center">-->
+    <!--<div class="col-5 ">-->
+      <!--<hr class="border">-->
+    <!--</div>-->
+    <!--<div class="col-2 "> Or</div>-->
+    <!--<div class="col-5">-->
+      <!--<hr class="border">-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--&lt;!&ndash;horizontal bar end1&ndash;&gt;-->
 
 
   <!--Sign up form bar start-->
 
   <form (ngSubmit)="onSubmit()" #f="ngForm">
     <div class="row ">
-
-      <div class="input-group" *ngIf="isItSignUpPage">
+      <!--<p>Register to get started. Its free!</p>-->
+      <div class="input-group" >
         <span class="input-group-addon"><i class="fa  fa-user"></i></span>
         <!--<input type="text" class="form-control" name="username" placeholder="Email or Username">-->
         <input type="text" id="username" class="form-control form-control-lg" ngModel name="full_name" required placeholder="Full name">
@@ -137,7 +137,12 @@
         <input type="text" id="username" class="form-control form-control-lg" ngModel name="email" email required placeholder="Email or Username">
       </div>
 
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <!--<input type="text" class="form-control" name="username" placeholder="Password">-->
+        <input type="password" id="password" class="form-control form-control-lg" ngModel name="password" password required placeholder="Confirm password">
 
+      </div>
       <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
         <!--<input type="text" class="form-control" name="username" placeholder="Password">-->
@@ -151,9 +156,9 @@
   </form>
   <!--Sign up form bar end1-->
   <!--<br>-->
-  <div class="row whiteText" >
-    <div><b>Don't have an account? Click <a [routerLink]="'/'+global.loginURL" style="color:white;">here to Register</a></b></div>
-  </div>
+  <!--<div class="row whiteText" >-->
+    <!--<div><b>Already have an account? Click <a [routerLink]="'/'+global.loginURL" style="color:white;">here to Register</a></b></div>-->
+  <!--</div>-->
 
 </div>
 

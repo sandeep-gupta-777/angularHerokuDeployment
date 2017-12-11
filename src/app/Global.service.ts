@@ -36,8 +36,9 @@ export class Global{
 
   private _loggedInUserDetails:SiteUser;
   private _seachQuery:string;
-  // private _backendURL_heroku = 'https://shielded-harbor-17443.herokuapp.com';
-  private _backendURL_heroku = 'http://localhost:3000';
+  //this ios to be deleted
+  private _backendURL_heroku = 'https://shielded-harbor-17443.herokuapp.com';
+  // private _backendURL_heroku = 'http://localhost:3000';
   //backend routes
 
   public resultsArray: [BlogPost];

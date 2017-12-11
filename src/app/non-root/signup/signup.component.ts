@@ -18,18 +18,31 @@ export class SignupComponent implements OnInit {
   helper_message = "";
   isItSignUpPage:boolean = false;
   makeGetRequestForFaceBook(  ){
-    console.log('asking for facebook');
+    console.log('asking for facebook');;
     this.helper.makeGetRequest('auth/facebook').subscribe((value)=>{console.log(value)});
+  }
+  showErrorMessageForThreeSec(message:string){
+    this.helper_message=message;
+    this.showErrorMessage = true;
+    setTimeout(()=>{this.showErrorMessage=false},3000);
   }
   onSubmit() {
 
     //Sign up user
     console.log(this.form);
     if(!this.form.valid){
-      this.showErrorMessage=true;
-      this.helper_message = "Please fill the form correctly";
+      // this.showErrorMessage=true;
+      // this.helper_message = "Please fill the form correctly";
+      this.showErrorMessageForThreeSec("Please fill the form correctly");;
       return;
     }
+
+    if(this.form.value.password!==this.form.value.confirm_password){
+      this.showErrorMessageForThreeSec("Passwords must match");
+      return;
+    }
+
+    this.showErrorMessageForThreeSec("Sending details to server...");
     // let user:SiteUser = new SiteUser("","tempUsername",this.form.value.username, this.form.value.email,this.form.value.password);
     let user:SiteUser = {userName:this.form.value.username, fullName:this.form.value.full_name, password:this.form.value.password, email:this.form.value.email};
 

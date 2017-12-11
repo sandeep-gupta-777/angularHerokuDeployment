@@ -134,19 +134,19 @@
       <div class="input-group">
         <span class="input-group-addon"><i class="fa  fa-user"></i></span>
         <!--<input type="text" class="form-control" name="username" placeholder="Email or Username">-->
-        <input type="text" id="username" class="form-control form-control-lg" ngModel name="email" email required placeholder="Email or Username">
+        <input type="text" id="username" class="form-control form-control-lg" ngModel name="email" email required placeholder="Email">
       </div>
 
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <!--<input type="text" class="form-control" name="username" placeholder="Password">-->
+        <input type="password" id="password" class="form-control form-control-lg" ngModel name="confirm_password" password required placeholder="Confirm password">
+
+      </div>
       <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
         <!--<input type="text" class="form-control" name="username" placeholder="Password">-->
         <input type="password" id="password" class="form-control form-control-lg" ngModel name="password" password required placeholder="Confirm password">
-
-      </div>
-      <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-        <!--<input type="text" class="form-control" name="username" placeholder="Password">-->
-        <input type="password" id="password" class="form-control form-control-lg" ngModel name="password" password required placeholder="Password">
 
       </div>
       <div *ngIf="showErrorMessage" style="color: white">{{helper_message}}</div>

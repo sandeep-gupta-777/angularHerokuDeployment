@@ -75,6 +75,7 @@ export class BlogPageComponent implements OnInit, AfterViewInit, OnDestroy, OnCh
 
 
   updateBlogOnServer(shouldUpdateBlogHTMLAsWell: Boolean) {
+    console.log("===================================");
 
 
     if (this.blogTitle === "") {
@@ -153,6 +154,7 @@ export class BlogPageComponent implements OnInit, AfterViewInit, OnDestroy, OnCh
 
 
   updateDraftOnServer() {
+
     if (this.isBlogHTMLDraftDirty)
       this.updateBlogOnServer(false);
   }
@@ -197,6 +199,7 @@ export class BlogPageComponent implements OnInit, AfterViewInit, OnDestroy, OnCh
   }
 
   populateBlogPostObject(shouldUpdateBlogHTMLAsWell){
+    console.log("===================================");
     if (this.blogInstance === null) {
       this.blogInstance = this.componentService.createNewBlogPostObject();
     }
@@ -207,7 +210,9 @@ export class BlogPageComponent implements OnInit, AfterViewInit, OnDestroy, OnCh
       this.blogInstance.blogText = this.editor.getContent({format: 'text'});
       this.blogInstance.blogIsDirty = false;
     }
-
+    // this.blogInstance.blogAuthor_id=localStorage.getItem('userID');
+    // this.blogInstance.blogAuthor_fullName="test";
+    // above work is done by createNewBlogPostObject()
     this.blogInstance.blogText = this.editor.getContent({format: 'text'});
     this.blogInstance.blogTitle = this.blogTitle;
     this.blogInstance.blogHTML = this.blogContent;

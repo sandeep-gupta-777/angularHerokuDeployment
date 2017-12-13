@@ -14,8 +14,8 @@ export class ComponentService {
   createNewBlogPostObject():BlogPost{
     let tempBlogPost:BlogPost = {
       blogRelevency: 0,
-        blogAuthor_id: this.global.getLoggedInUserDetails()._id,
-      blogAuthor_fullName: this.global.getLoggedInUserDetails().fullName,
+      blogAuthor_id: localStorage.getItem('userID'),
+      blogAuthor_fullName:localStorage.getItem('fullName'),
       blogCreationDate: new Date(),
       blogIsDirty: true,
     };

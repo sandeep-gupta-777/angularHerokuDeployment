@@ -3,30 +3,30 @@
   <!--<div class="container" >-->
 
   <div class="row">
-    <div class="col-12 ">
-      <!--dropdown begins-->
-      <div class="dropdown pull-right " *ngIf="resultsArray && resultsArray.length>=1">
-        <button class="btn btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="true">
-          Sort By
-          <span class="caret"></span>
-        </button>
-        <!--TODO: use pipes instead of methods in sorting-->
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a (click)="sortbyPropery='-blogRelevency'">blogRelevency
-            <span *ngIf="sortbyPropery === '-blogRelevency'" class="glyphicon glyphicon-ok"></span>
-          </a></li>
-          <li><a (click)="sortbyPropery='-blogCreationDate'">Latest<span
-            *ngIf="sortbyPropery === '-blogCreationDate'" class="glyphicon glyphicon-ok"></span></a></li>
-          <li><a (click)="sortbyPropery='-blogLikes'">Likes<span
-            *ngIf="sortbyPropery === '-blogLikes'" class="glyphicon glyphicon-ok"></span></a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
-      </div>
-      <!--dropdown ends here-->
+    <!--<div class="col-12 ">-->
+      <!--&lt;!&ndash;dropdown begins&ndash;&gt;-->
+      <!--<div class="dropdown pull-right " *ngIf="resultsArray && resultsArray.length>=1">-->
+        <!--<button class="btn btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"-->
+                <!--aria-haspopup="true" aria-expanded="true">-->
+          <!--Sort By-->
+          <!--<span class="caret"></span>-->
+        <!--</button>-->
+        <!--&lt;!&ndash;TODO: use pipes instead of methods in sorting&ndash;&gt;-->
+        <!--<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">-->
+          <!--<li><a (click)="sortbyPropery='-blogRelevency'">blogRelevency-->
+            <!--<span *ngIf="sortbyPropery === '-blogRelevency'" class="glyphicon glyphicon-ok"></span>-->
+          <!--</a></li>-->
+          <!--<li><a (click)="sortbyPropery='-blogCreationDate'">Latest<span-->
+            <!--*ngIf="sortbyPropery === '-blogCreationDate'" class="glyphicon glyphicon-ok"></span></a></li>-->
+          <!--<li><a (click)="sortbyPropery='-blogLikes'">Likes<span-->
+            <!--*ngIf="sortbyPropery === '-blogLikes'" class="glyphicon glyphicon-ok"></span></a></li>-->
+          <!--<li role="separator" class="divider"></li>-->
+          <!--<li><a href="#">Separated link</a></li>-->
+        <!--</ul>-->
+      <!--</div>-->
+      <!--&lt;!&ndash;dropdown ends here&ndash;&gt;-->
 
-    </div>
+    <!--</div>-->
     <br>
     <br>
 
